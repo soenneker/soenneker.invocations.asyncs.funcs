@@ -1,11 +1,10 @@
-﻿using Soenneker.Tests.Unit;
-using Xunit;
+using Soenneker.Tests.Unit;
 
 namespace Soenneker.Invocations.Asyncs.Funcs.Tests;
 
 public sealed class AsyncFuncInvocationTests : UnitTest
 {
-    [Fact]
+    [Test]
     public void Default()
     {
 
