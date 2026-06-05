@@ -12,6 +12,9 @@ public sealed class AsyncFuncInvocation<T>
 {
     private readonly Func<object?, CancellationToken, Task<T>> _callback;
 
+    /// <summary>
+    /// Gets state.
+    /// </summary>
     public object? State { get; }
 
     public AsyncFuncInvocation(Func<object?, CancellationToken, Task<T>> callback, object? state)
@@ -20,6 +23,11 @@ public sealed class AsyncFuncInvocation<T>
         State = state;
     }
 
+    /// <summary>
+    /// Executes the invoke operation.
+    /// </summary>
+    /// <param name="ct">The ct.</param>
+    /// <returns>A task containing the result of the operation.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public Task<T> Invoke(CancellationToken ct = default) => _callback(State, ct);
 }
