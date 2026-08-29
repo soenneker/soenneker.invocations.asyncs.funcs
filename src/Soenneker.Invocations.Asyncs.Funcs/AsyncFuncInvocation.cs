@@ -24,10 +24,10 @@ public sealed class AsyncFuncInvocation<T>
     }
 
     /// <summary>
-    /// Executes the invoke operation.
+    /// Invokes the async func invocation with the supplied payload.
     /// </summary>
-    /// <param name="ct">The ct.</param>
-    /// <returns>A task containing the result of the operation.</returns>
+    /// <param name="ct">Ct for the invoke operation.</param>
+    /// <returns>A task whose result is the value returned by invoke.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public Task<T> Invoke(CancellationToken ct = default) => _callback(State, ct);
 }
