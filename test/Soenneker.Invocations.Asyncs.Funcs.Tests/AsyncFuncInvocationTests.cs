@@ -13,7 +13,7 @@ public sealed class AsyncFuncInvocationTests : UnitTest
     }
 
     [Test]
-    public async Task Invoke_returns_result_and_passes_state_and_token()
+    public async ValueTask Invoke_returns_result_and_passes_state_and_token()
     {
         var state = new Calculation(21);
         using var cancellation = new CancellationTokenSource();
